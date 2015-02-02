@@ -47,6 +47,8 @@ var countries = [
                     ["Serbia","rs"]
 ];
 
+var img_root="https://raw.githubusercontent.com/Leonardo-Ciocan/Leonardo-Ciocan.github.io/master/";
+
 function fillCountryList(){
        for(var i = 0; i < countries.length;i++){
                $("#countryHolder").append(make_item(countries[i]));
@@ -56,7 +58,7 @@ function fillCountryList(){
 function make_item(country){
     var item = $('<div />', {
         "class": 'item',
-        html: "<img class='icon' src='images/" + country[0]+".png'/>"+"<h2>"+country[0]+"<h2>",
+        html: "<img class='icon' src='"+img_root+"images/" + country[0].toLocaleLowerCase()+".png'/>"+"<h2>"+country[0]+"<h2>",
         click: function(e){
             e.preventDefault();
             alert("test")
